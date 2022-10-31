@@ -1,8 +1,8 @@
-.App{
+.content{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
+    background-color: #E6E9F2;
     height: 100%;
-
 }
