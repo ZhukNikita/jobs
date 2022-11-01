@@ -6,10 +6,11 @@ import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
 import TurnedInIcon from '@mui/icons-material/TurnedIn';
 import Rating from '@mui/material/Rating';
 import {SavedJobs} from "../../models/SavedJobs";
+import {Link} from "react-router-dom";
 interface JobItem {
     item: JobModel,
-    rating: boolean
-    saveJobs : []
+    rating: boolean,
+    saveJobs : [],
     setSaveJobs : Dispatch<SetStateAction<SavedJobs[]>>
 }
 export const JobItem: React.FC<JobItem> =({ saveJobs ,setSaveJobs , item , rating})=>{
@@ -34,10 +35,11 @@ export const JobItem: React.FC<JobItem> =({ saveJobs ,setSaveJobs , item , ratin
             <img src={item.pictures[0]}  alt="" height='85px' width='85px'/>
             <div className={styles.jobInfo}>
                 <div className={styles.jobText}>
-                    <h3>{item.title}</h3>
+                    <Link to={`/job/${item.id}`}><h3>{item.title}</h3></Link>
+
                     <h4>{item.address}</h4>
                     <div className={styles.location}>
-                        <LocationOnIcon/><h4>Vienna, Austria</h4>
+                        <LocationOnIcon/><h4>{item.address}</h4>
                     </div>
                 </div>
                 <div className={styles.rating}>
@@ -51,7 +53,7 @@ export const JobItem: React.FC<JobItem> =({ saveJobs ,setSaveJobs , item , ratin
                 <div className={styles.save}>
                     <div className={styles.saveBut}>
                         <div onClick={SaveJob}>
-                            {saveJobs.some(o => o.id === item.id)? <TurnedInIcon/> :<TurnedInNotIcon/>}
+                            {saveJobs.some(el => el.id === item.id)? <TurnedInIcon/> :<TurnedInNotIcon/>}
                         </div>
                     </div>
                     <span>

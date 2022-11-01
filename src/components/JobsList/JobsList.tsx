@@ -1,17 +1,14 @@
 import style from './JobsList.module.css'
 import {JobModel} from "../../models/JobModel";
 import {JobItem} from "../JobItem/JobItem";
-import React, {useEffect, useState} from "react";
+import React, {Dispatch, SetStateAction, useState} from "react";
 import {SavedJobs} from "../../models/SavedJobs";
 interface JobsListInt {
     items: JobModel[]
+    saveJobs : [],
+    setSaveJobs : Dispatch<SetStateAction<SavedJobs[]>>
 }
-export const JobsList : React.FC<JobsListInt> = ({items})=> {
-    const [saveJobs , setSaveJobs] = useState<SavedJobs[]>(() => {
-        const saved = localStorage.getItem('save')
-        const initialValue: [] = saved? JSON.parse(saved):[]
-        return initialValue || []
-    })
+export const JobsList : React.FC<JobsListInt> = ({items ,saveJobs,setSaveJobs})=> {
     function isRatingJob(job: JobModel){
         if(job=== items[0]) return true
         if(job=== items[2]) return true
