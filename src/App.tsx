@@ -10,15 +10,14 @@ import {JobModel} from "./models/JobModel";
 function App() {
     const [jobs , setJobs] = useState<JobModel[]>([])
     const [loading , setLoading] = useState<boolean>(true)
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json' ,
+            'Authorization': 'Bearer wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu',
+        },
+    }
     useEffect(()=>{
-        const requestOptions = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json' ,
-                'Authorization': 'Bearer wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu',
-            },
-
-        }
         const fetchData = async () => {
             const result:SetStateAction<JobModel[]> = await new Promise((res) => {
                 fetch('https://api.json-generator.com/templates/ZM1r0eic3XEy/data',requestOptions)

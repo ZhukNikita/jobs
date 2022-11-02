@@ -15,23 +15,23 @@ interface MainPageInt {
 
 export const MainPage : React.FC<MainPageInt> = ({items , saveJobs, setSaveJobs , loading})=>{
     const [currentPage , setCurrentPage] = useState(1)
-    const [feedbacksPerPage ] = useState(15)
-    const indexOfLastFeedback = currentPage*feedbacksPerPage
-    const indexOfFirstFeedback = indexOfLastFeedback - feedbacksPerPage
-    let currentFeedback = items.slice(indexOfFirstFeedback , indexOfLastFeedback)
+    const [jobsPerPage ] = useState(15)
+    const indexOfLastJob = currentPage*jobsPerPage
+    const indexOfFirstJob = indexOfLastJob - jobsPerPage
+    let currentJob = items.slice(indexOfFirstJob , indexOfLastJob)
     const pageNumbers = []
-    for(let i = 0 ;  i <= items.length/ feedbacksPerPage ; i++){
+    for(let i = 0 ;  i <= items.length/ jobsPerPage ; i++){
         pageNumbers.push(i)
     }
-    if(items.length % feedbacksPerPage === 0)    pageNumbers.pop()
+    if(items.length % jobsPerPage === 0) pageNumbers.pop()
 
     return(
         <div className={styles.content}>
             <div style={{marginBottom: '50px' , width:'100%'}}>
-                <JobsList loading={loading} items = {currentFeedback} saveJobs={saveJobs} setSaveJobs={setSaveJobs}/>
+                <JobsList loading={loading} items = {currentJob} saveJobs={saveJobs} setSaveJobs={setSaveJobs}/>
             </div>
             <div>
-                <PaginationComponent pageNumbers={pageNumbers} setCurrentPage={setCurrentPage} items={items}/>
+                <PaginationComponent pageNumbers={pageNumbers} setCurrentPage={setCurrentPage}/>
             </div>
         </div>
     )

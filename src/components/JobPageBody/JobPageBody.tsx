@@ -1,6 +1,8 @@
 //@ts-ignore
 import styles from './JobPageBody.module.css'
 import React from 'react'
+import {YearsCounter} from "../YearsCounter";
+
 interface BodyInt{
     title: string
     description : string
@@ -9,11 +11,6 @@ interface BodyInt{
 }
 
 export const JobPageBody: React.FC<BodyInt> =({title ,description,salary , createdAt})=>{
-    let date1 = new Date(createdAt);
-    let date2 = new Date();
-    let daysLag = Math.ceil(Math.abs(date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
-    let year = (daysLag - (daysLag % 365)) / 365
-    let days = daysLag % 365 % 31
     let indexRespons = description.indexOf('Responsopilities')
     let indexBenef = description.indexOf('Compensation & Benefits:')
     let descriptionText = description.slice(0 , indexRespons)
@@ -35,11 +32,11 @@ export const JobPageBody: React.FC<BodyInt> =({title ,description,salary , creat
                 </div>
                 <div className={styles.posted}>
                     <span>
-                        Posted {`${year} years  and ${days} days ago`}
+                        Posted {YearsCounter(createdAt)}
                     </span>
                 </div>
                 <div className={styles.description}>
-                    <h3 style={{marginTop: '7px'}}>
+                    <h3 style={{marginTop: '10px'}}>
                         {descriptionText}
                     </h3>
                     <h2 style={{marginTop:'35px'}}>{description.slice(indexRespons, indexRespons+17)}</h2>
