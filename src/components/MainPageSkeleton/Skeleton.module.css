@@ -1,0 +1,50 @@
+.skeleton {
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    height: 164px;
+    width: 1280px;
+    background-color: #ffffff;
+}
+.skeletonContent{
+    padding: 24px 16px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 80%;
+}
+.skeletonUser {
+    display: flex;
+}
+.skeletonUser span{
+    width:85px;
+    height:85px;
+}
+.skeletonInfo span{
+    width:750px;
+    height:45px;
+}
+.skeletonTags span{
+    margin-right: 15px;
+}
+@media screen and (max-width: 600px){
+    .skeleton{
+        width: 396px;
+        height: 100%;
+    }
+    .skeletonUser span{
+        width: 66px;
+        height: 66px;
+    }
+    .skeletonInfo span{
+        width:200px;
+        height:45px;
+    }
+    .skeletonTags span:first-child {
+        margin-top: 10px;
+    }
+    .rating{
+        display: none;
+    }
+}

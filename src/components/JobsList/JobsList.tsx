@@ -1,22 +1,37 @@
+//@ts-ignore
 import style from './JobsList.module.css'
 import {JobModel} from "../../models/JobModel";
 import {JobItem} from "../JobItem/JobItem";
-import React, {Dispatch, SetStateAction, useState} from "react";
+import React, {Dispatch, SetStateAction} from "react";
 import {SavedJobs} from "../../models/SavedJobs";
+import {MainPageSkeleton} from "../MainPageSkeleton/MainPageSkeleton";
 interface JobsListInt {
     items: JobModel[]
-    saveJobs : [],
+    saveJobs : SavedJobs[],
     setSaveJobs : Dispatch<SetStateAction<SavedJobs[]>>
+    loading: boolean
 }
-export const JobsList : React.FC<JobsListInt> = ({items ,saveJobs,setSaveJobs})=> {
-    function isRatingJob(job: JobModel){
-        if(job=== items[0]) return true
-        if(job=== items[2]) return true
+export const JobsList : React.FC<JobsListInt> = ({items ,saveJobs,setSaveJobs , loading})=> {
+
+    if(loading){
+        return (
+            <div className={style.list}>
+                {
+                    [...Array(20)].map(()=><div className={style.skeleton}> <MainPageSkeleton key={Math.random()}/></div>)
+                }
+            </div>
+
+        )
     }
+    function isRatingJob(job: JobModel){
+        if(job.name=== 'Sureplex') return true
+        if(job.name=== 'Elentrix') return true
+    }
+
     return(
         <div className={style.list}>
             {
-                items.map(job =>
+               items.map(job =>
                     <JobItem saveJobs={saveJobs} setSaveJobs={setSaveJobs} rating = {isRatingJob(job)} item = {job} key={job.id}/>
                 )
             }

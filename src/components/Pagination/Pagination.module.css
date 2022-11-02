@@ -1,0 +1,12 @@
+.pagination{
+    background-color: white;
+    margin-bottom: 50px;
+    padding: 10px 10px;
+    border-radius: 10.5px;
+
+}
+.bar ul{
+    width: 100%;
+    height: 40px;
+    justify-content: space-between;
+}

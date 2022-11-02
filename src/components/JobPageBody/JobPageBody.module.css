@@ -10,9 +10,8 @@
     'posted posted '
     'description description'
     'second_apply second_apply'
-
 ;
-    grid-template-rows: 7% 13.3%  3.3%  60% 7%;
+    grid-template-rows: 7% 13.3%  3.3%  67% 7%;
     grid-template-columns: 75% 23%;
 }
 .apply{
@@ -68,6 +67,8 @@
 .salary p{
     margin-top: 0;
 }
+.salary p:first-child{
+    display: none;}
 .posted{
     grid-area: posted;
     color: rgba(56, 65, 93, 0.355988);
@@ -93,4 +94,68 @@ li {
     display: inline-block;
     width: 1em;
     margin-left: -1em;
+}
+
+@media screen and (max-width: 600px) {
+    .body{
+        margin-top: 32px;
+        display: grid;
+        justify-content: space-between;
+        grid-template-areas:
+    'title title'
+    'posted salary'
+    'posted salary'
+    'description description'
+    'second_apply second_apply'
+    ;
+        grid-template-rows: 13.3% 4.7%  3.3% 67% 7% 7%;
+        grid-template-columns: 60% 39%;
+    }
+    .second_apply{
+        text-align: center;
+        margin-top: 60px;
+    }
+    .salary{
+        margin-left: 0;
+        margin-top: 25px;
+    }
+    .salary h2{
+        margin: 0;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+    }
+    .title h2{
+        margin: 0;
+    }
+    .salary{
+        transform: translate(0 , -10px);
+    }
+    .salary p:first-child{
+        display: block;
+    }
+    .salary p:last-child{
+        display: none;
+    }
+    .salary p{
+        margin: 0;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .apply{
+        display: none;
+    }
+    .posted span {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 25px;
+    }
+    .posted {
+        margin-top: 25px;
+    }
+    .description{
+        margin-top: 14px;
+    }
+
 }

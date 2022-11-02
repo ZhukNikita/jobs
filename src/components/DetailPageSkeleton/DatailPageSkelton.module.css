@@ -1,0 +1,65 @@
+.skeleton{
+    margin-top: 69px;
+    width: 80%;
+    height: 100%;
+}
+.skeletonHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.skeletonSave{
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
+.skeletonSaveList span{
+    width: 115px;
+    height: 24px;
+}
+.skeletonShare span{
+    width: 100px;
+    height: 24px;
+}
+.skeletonApply span{
+    margin-top: 50px;
+    width: 127px;
+    height: 52px;
+}
+.skeletonTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.skeletonName span{
+    width: 500px;
+    height: 120px;
+}
+.skeletonSalary span{
+    width: 162px;
+    height: 50px;
+}
+.skeletonBenefits{
+    margin-top: 40px;
+    width: 100%;
+}
+.skeletonBenefits div{
+    display: flex;
+    margin: 15px 0 15px 0;
+}
+.skeletonBenefits div span:last-child{
+    margin-left: 15px;
+}
+@media screen and (max-width: 600px) {
+    .skeletonHeader{
+        display: block;
+    }
+    .skeletonName span{
+        width: 300px;
+        height: 120px;
+    }
+    .skeletonSalary{
+        display: none;
+    }
+}

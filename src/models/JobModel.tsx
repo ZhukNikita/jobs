@@ -1,17 +1,21 @@
 export interface JobModel {
     address : string,
-    benefits : [],
+    benefits : string[],
     createdAt : string,
     description : string,
     email: string,
-    employment_type : [],
+    employment_type : string[],
     id: string,
-    location: object,
+    location: locationInt,
     name : string,
     phone : string,
-    pictures : [],
+    pictures : string[],
     salary : string,
     title : string,
     updatedAt : string,
     rating : boolean
+}
+interface locationInt{
+    lat:string
+    long: string
 }

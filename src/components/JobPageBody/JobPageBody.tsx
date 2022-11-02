@@ -1,5 +1,6 @@
-import React from 'react'
+//@ts-ignore
 import styles from './JobPageBody.module.css'
+import React from 'react'
 interface BodyInt{
     title: string
     description : string
@@ -28,6 +29,7 @@ export const JobPageBody: React.FC<BodyInt> =({title ,description,salary , creat
                 </div>
                 <div className={styles.title}><h2>{title}</h2></div>
                 <div className={styles.salary}>
+                    <p>Brutto, per year</p>
                     <h2>€{salary}</h2>
                     <p>Brutto, per year</p>
                 </div>
