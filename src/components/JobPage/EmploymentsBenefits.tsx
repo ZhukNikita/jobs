@@ -1,16 +1,17 @@
-import React from "react";
+//@ts-ignore
 import styles from './JobPage.module.css'
+import React from "react";
 interface EmploymentsBenefitsInt{
-    employmets: []
+    employments: []
     benefits: []
 }
-export const EmploymentsBenefits:React.FC<EmploymentsBenefitsInt> =({employmets , benefits})=>{
+export const EmploymentsBenefits:React.FC<EmploymentsBenefitsInt> =({employments , benefits})=>{
     return(
         <div>
             <h2 className={styles.employments}>Employment type</h2>
             <div className={styles.employmentsFlex}>
                 {
-                    employmets.map(e =>
+                    employments.map(e =>
                         <div key={e} className={styles.employmentItem}>
                             {e}
                         </div>

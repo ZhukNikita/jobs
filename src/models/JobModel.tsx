@@ -1,10 +1,10 @@
 export interface JobModel {
     address : string,
-    benefits : string[],
+    benefits : [],
     createdAt : string,
     description : string,
     email: string,
-    employment_type : string[],
+    employment_type : [],
     id: string,
     location: locationInt,
     name : string,

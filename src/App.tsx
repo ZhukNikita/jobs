@@ -18,7 +18,7 @@ function App() {
         },
     }
     useEffect(()=>{
-        const fetchData = async () => {
+        const fetchData: ()=>Promise<void> = async () => {
             const result:SetStateAction<JobModel[]> = await new Promise((res) => {
                 fetch('https://api.json-generator.com/templates/ZM1r0eic3XEy/data',requestOptions)
                     .then((response) => {

@@ -1,6 +1,7 @@
+//@ts-ignore
+import styles from './JobPage.module.css'
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import React from "react";
-import styles from './JobPage.module.css'
 
 interface JobMapInt{
     title: string,

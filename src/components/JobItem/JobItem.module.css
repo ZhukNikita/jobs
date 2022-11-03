@@ -78,6 +78,7 @@
 }
 .saveBut{
     width: 100%;
+    cursor: pointer;
 }
 .saveBut div{
     float: right;

@@ -54,7 +54,7 @@ export const JobPage: React.FC<JobPageInt> = ({items, saveJobs, setSaveJobs}) =>
                     <h2>Job Detail</h2>
                     <hr/>
                     <div>
-                        <span>
+                        <span onClick={SaveJob}>
                             <div className={styles.mobileIcon} onClick={SaveJob}>
                                 {saveJobs.some(el => el.id === job.id) ? <StarIcon/> : <StarBorderIcon/>}
                             </div>
@@ -83,7 +83,7 @@ export const JobPage: React.FC<JobPageInt> = ({items, saveJobs, setSaveJobs}) =>
                     </div>
                 </div>
                 <h1>Additional info</h1>
-                <EmploymentsBenefits benefits={job.benefits} employmets={job.employment_type}/>
+                <EmploymentsBenefits benefits={job.benefits} employments={job.employment_type}/>
                 <h1 className={styles.picturesTitle}>Attached images</h1>
                 <hr/>
                 <div className={styles.pictures}>

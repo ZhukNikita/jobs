@@ -4,6 +4,6 @@ export const YearsCounter =(createdAt:string)=>{
     let daysLag = Math.ceil(Math.abs(date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
     let year = (daysLag - (daysLag % 365)) / 365
     let days = daysLag % 365 % 31
-    let result = `${year} years and ${days} days ago`
+    let result = `${year} years ${days !== 0?'and' +' '+ days + ' '+ 'days ago': 'ago'}`
     return result
 }

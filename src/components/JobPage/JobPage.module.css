@@ -102,6 +102,7 @@
 }
 .locationText{
     z-index: 2;
+    color: #E7EAF0;
 }
 .locationText h2{
     margin-top: 0;

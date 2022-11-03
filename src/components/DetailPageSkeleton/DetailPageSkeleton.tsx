@@ -1,5 +1,5 @@
 //@ts-ignore
-import styles from "./DatailPageSkelton.module.css";
+import styles from "./DetailPageSkeleton.module.css";
 import React from "react";
 import Stack from "@mui/material/Stack";
 import Skeleton from "@mui/material/Skeleton";
